@@ -11,7 +11,7 @@ export const profile = {
     "Business Management student at Asia Pacific University with hands-on experience in operations analysis, international business, and digital product research. Skilled in applying analytical frameworks to real-world data and translating complex findings into actionable business insights. Certified in Google UX Design with practical experience in user research and prototyping. Seeking a Junior Business Manager role where I can contribute to data-driven decision-making and process improvement.",
 
   social: {
-    LinkedIn: 'https://www.linkedin.com/in/sagdiana-kismanova',
+    LinkedIn: 'https://www.linkedin.com/in/sagdiana-kismanova-550396377',
     Telegram: '#',
     Instagram: '#',
   },
