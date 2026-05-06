@@ -52,7 +52,7 @@ export default function CardNav({ t }) {
       initial={{ y: -32, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5, ease: 'easeOut' }}
-      className="fixed top-4 left-1/2 -translate-x-1/2 z-50 w-[calc(100%-1.5rem)] max-w-fit md:w-auto"
+      className="fixed top-4 inset-x-0 z-50 px-3 md:px-0 md:top-5 md:left-1/2 md:right-auto md:inset-x-auto md:-translate-x-1/2 md:w-auto"
     >
       <div className="glass rounded-full px-2 py-1.5 hidden md:flex items-center gap-0.5 shadow-lg shadow-slate-200/50">
         {navItems.map(({ label, id }) => {
@@ -109,19 +109,19 @@ export default function CardNav({ t }) {
         </button>
       </div>
 
-      <div className="md:hidden relative">
-        <div className="glass rounded-[22px] px-3 py-2.5 shadow-lg shadow-slate-200/50">
-          <div className="flex items-center justify-between gap-3 min-w-[260px]">
-            <div className="min-w-0">
-              <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--text-muted)]">
-                Navigation
+      <div className="md:hidden relative ml-auto w-[min(11rem,calc(100vw-1.5rem))]">
+        <div className="glass rounded-[22px] px-3 py-2 shadow-lg shadow-slate-200/50">
+          <div className="flex items-center justify-between gap-2">
+            <div className="min-w-0 flex-1">
+              <p className="text-[9px] uppercase tracking-[0.18em] font-bold text-[var(--text-muted)]">
+                Menu
               </p>
-              <p className="text-sm font-semibold text-[var(--text-primary)] truncate">
+              <p className="text-[13px] font-semibold text-[var(--text-primary)] truncate">
                 {navItems.find((item) => item.id === active)?.label}
               </p>
             </div>
 
-            <div className="flex items-center gap-1">
+            <div className="flex items-center gap-0.5 shrink-0">
               <button
                 onClick={toggleTheme}
                 className="p-2 rounded-full text-[var(--text-muted)] hover:text-[var(--text-primary)] transition-colors duration-200 focus:outline-none"
@@ -155,7 +155,7 @@ export default function CardNav({ t }) {
               animate={{ opacity: 1, y: 0, scale: 1 }}
               exit={{ opacity: 0, y: -8, scale: 0.98 }}
               transition={{ duration: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="glass absolute left-0 right-0 mt-3 rounded-[28px] p-3 shadow-xl shadow-slate-200/50"
+              className="glass absolute right-0 mt-3 w-[min(20rem,calc(100vw-1.5rem))] max-h-[72vh] overflow-y-auto rounded-[28px] p-3 shadow-xl shadow-slate-200/50"
             >
               <div className="grid gap-1.5">
                 {navItems.map(({ label, id }) => {
@@ -192,7 +192,7 @@ export default function CardNav({ t }) {
                 <p className="text-[10px] uppercase tracking-[0.18em] font-bold text-[var(--text-muted)] mb-2 px-1">
                   Language
                 </p>
-                <div className="grid grid-cols-3 gap-2">
+                <div className="grid grid-cols-2 gap-2">
                   {LANGS.map(({ code, label }) => (
                     <button
                       key={code}
