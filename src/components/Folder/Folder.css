@@ -1,0 +1,156 @@
+.folder {
+  transition: transform 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+  cursor: pointer;
+  will-change: transform;
+}
+
+.folder:not(.open):hover {
+  transform: translateY(-8px);
+}
+
+.folder:not(.open):hover .paper {
+  --paper-x: -50%;
+  --paper-y: 0%;
+}
+
+.folder:not(.open):hover .folder__front {
+  transform: skew(15deg) scaleY(0.6);
+}
+
+.folder:not(.open):hover .right {
+  transform: skew(-15deg) scaleY(0.6);
+}
+
+.folder.open {
+  transform: translateY(-8px);
+}
+
+.folder.open .paper:nth-child(1) {
+  --paper-x: -120%;
+  --paper-y: -70%;
+  --paper-rotate: -15deg;
+}
+
+.folder.open .paper:nth-child(1):hover {
+  --paper-scale: 1.06;
+}
+
+.folder.open .paper:nth-child(2) {
+  --paper-x: 10%;
+  --paper-y: -70%;
+  --paper-rotate: 15deg;
+  height: 80%;
+}
+
+.folder.open .paper:nth-child(2):hover {
+  --paper-scale: 1.06;
+}
+
+.folder.open .paper:nth-child(3) {
+  --paper-x: -50%;
+  --paper-y: -100%;
+  --paper-rotate: 5deg;
+  height: 80%;
+}
+
+.folder.open .paper:nth-child(3):hover {
+  --paper-scale: 1.06;
+}
+
+.folder[data-paper-count='2'].open .paper:nth-child(1) {
+  --paper-x: -105%;
+  --paper-y: -78%;
+  --paper-rotate: -13deg;
+}
+
+.folder[data-paper-count='2'].open .paper:nth-child(2) {
+  --paper-x: -5%;
+  --paper-y: -88%;
+  --paper-rotate: 10deg;
+  height: 78%;
+}
+
+.folder.open .folder__front {
+  transform: skew(15deg) scaleY(0.6);
+}
+
+.folder.open .right {
+  transform: skew(-15deg) scaleY(0.6);
+}
+
+.folder__back {
+  position: relative;
+  width: 100px;
+  height: 80px;
+  background: var(--folder-back-color);
+  border-radius: 0px 10px 10px 10px;
+}
+
+.folder__back::after {
+  position: absolute;
+  z-index: 0;
+  bottom: 98%;
+  left: 0;
+  content: '';
+  width: 30px;
+  height: 10px;
+  background: var(--folder-back-color);
+  border-radius: 5px 5px 0 0;
+}
+
+.paper {
+  --paper-x: -50%;
+  --paper-y: 10%;
+  --paper-rotate: 0deg;
+  --paper-scale: 1;
+  --magnet-x: 0px;
+  --magnet-y: 0px;
+  position: absolute;
+  z-index: 2;
+  bottom: 10%;
+  left: 50%;
+  transform:
+    translate3d(var(--paper-x), var(--paper-y), 0)
+    translate3d(var(--magnet-x), var(--magnet-y), 0)
+    rotateZ(var(--paper-rotate))
+    scale(var(--paper-scale));
+  width: 70%;
+  height: 80%;
+  background: var(--paper-1);
+  border-radius: 10px;
+  transition:
+    transform 0.42s cubic-bezier(0.22, 1, 0.36, 1),
+    height 0.32s ease,
+    background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.paper:nth-child(2) {
+  background: var(--paper-2);
+  width: 80%;
+  height: 70%;
+}
+
+.paper:nth-child(3) {
+  background: var(--paper-3);
+  width: 90%;
+  height: 60%;
+}
+
+.folder__front {
+  position: absolute;
+  z-index: 3;
+  width: 100%;
+  height: 100%;
+  background: var(--folder-color);
+  border-radius: 5px 10px 10px 10px;
+  transform-origin: bottom;
+  transition: transform 0.34s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: transform;
+  backface-visibility: hidden;
+}
