@@ -1,0 +1,42 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="180" y1="80" x2="1460" y2="860" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="0.38" stop-color="#13213B"/>
+      <stop offset="0.72" stop-color="#1E293B"/>
+      <stop offset="1" stop-color="#6D28D9"/>
+    </linearGradient>
+    <linearGradient id="accent" x1="1060" y1="140" x2="1420" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#FDBA74"/>
+      <stop offset="0.52" stop-color="#F59E0B"/>
+      <stop offset="1" stop-color="#EA580C"/>
+    </linearGradient>
+    <linearGradient id="line" x1="240" y1="0" x2="1240" y2="900" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#F8FAFC" stop-opacity="0.34"/>
+      <stop offset="1" stop-color="#F8FAFC" stop-opacity="0"/>
+    </linearGradient>
+    <filter id="blur" x="740" y="60" width="700" height="700" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="60"/>
+    </filter>
+  </defs>
+
+  <rect width="1600" height="900" rx="36" fill="url(#bg)"/>
+
+  <g opacity="0.75">
+    <path d="M0 714C180 626 334 578 510 564C716 548 836 596 1012 564C1176 534 1332 442 1600 316V900H0V714Z" fill="#0F172A"/>
+    <path d="M0 764C172 704 360 682 526 698C736 718 878 782 1048 770C1238 756 1384 662 1600 508V900H0V764Z" fill="#111C31"/>
+  </g>
+
+  <circle cx="1100" cy="340" r="210" fill="#F59E0B" fill-opacity="0.18" filter="url(#blur)"/>
+  <circle cx="1338" cy="178" r="120" fill="#FB7185" fill-opacity="0.22"/>
+  <circle cx="1266" cy="474" r="170" fill="url(#accent)"/>
+
+  <path d="M934 176L1396 176" stroke="url(#line)" stroke-width="2"/>
+  <path d="M1012 260L1518 260" stroke="url(#line)" stroke-opacity="0.58" stroke-width="2"/>
+  <path d="M1054 344L1546 344" stroke="url(#line)" stroke-opacity="0.42" stroke-width="2"/>
+
+  <text x="110" y="456" fill="#F8FAFC" font-family="Georgia, Times New Roman, serif" font-size="116" font-weight="700">Sagdiana</text>
+  <text x="110" y="572" fill="#FDBA74" font-family="Georgia, Times New Roman, serif" font-size="116" font-weight="700">Kismanova</text>
+
+  <rect x="110" y="96" width="1380" height="708" rx="28" stroke="#F8FAFC" stroke-opacity="0.12" stroke-width="2"/>
+</svg>

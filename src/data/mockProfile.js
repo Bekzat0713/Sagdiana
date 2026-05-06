@@ -298,6 +298,38 @@ export const profile = {
     },
   ],
 
+  resume: [
+    {
+      title: 'Sagdiana Kismanova CV',
+      description:
+        'Full English resume in PDF format with education, projects, certifications, and contact details ready for recruiters and hiring managers.',
+      tags: ['CV', 'PDF', 'English', '2026'],
+      year: '2026',
+      photo: '/resume/resume-cover.svg',
+      link: '/resume/Sagdiana_Kismanova_CV_ENG.pdf',
+      icon: 'рџ“„',
+      detail: {
+        subtitle: 'Full Resume В· PDF Document',
+        sections: [
+          {
+            heading: 'What It Includes',
+            body: 'A recruiter-ready summary of academic background, business-analysis work, UX design experience, certifications, and multilingual communication strengths.',
+          },
+          {
+            heading: 'Best Use',
+            body: 'Open the PDF to preview the full resume, or share it directly when applying for internships, junior business roles, and cross-functional analyst positions.',
+          },
+          {
+            heading: 'Format',
+            body: 'Stored locally inside the portfolio so visitors can access the exact CV file without leaving the website ecosystem.',
+          },
+        ],
+        frameworks: ['Business Analysis', 'UX Design', 'Operations Strategy', 'Research', 'Communication'],
+        timeline: '2026',
+      },
+    },
+  ],
+
   workExperience: [
     {
       role: 'UX Designer — QuickBook Capstone',

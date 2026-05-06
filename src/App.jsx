@@ -22,6 +22,7 @@ function MainApp() {
         <FolderSection
           projects={profile.projects}
           certificates={profile.certificates}
+          resume={profile.resume}
           t={t}
         />
         <ContactSection profile={profile} t={t} />

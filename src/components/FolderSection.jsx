@@ -4,11 +4,12 @@ import { ArrowLeft, Calendar, Building2, ArrowUpRight, X, ExternalLink, Award } 
 import Folder from './Folder/Folder'
 import { useTheme } from './ThemeContext'
 
-const PAGE_IDS = ['projects', 'certificates']
+const PAGE_IDS = ['projects', 'certificates', 'resume']
 
 const PAGE_ACCENTS = {
   projects:     '#7C3AED',
   certificates: '#0EA5E9',
+  resume:       '#F59E0B',
 }
 
 const PAGE_VARIANTS = {
@@ -586,7 +587,7 @@ function CertCard({ item, i, isDark, onDetails }) {
 }
 
 /* ── Content Page (folder open → page) ── */
-function ContentPage({ pageId, projects, certificates, onBack, t }) {
+function ContentPage({ pageId, projects, certificates, resume, onBack, t }) {
   const { isDark } = useTheme()
   const [detailIndex, setDetailIndex] = useState(null)
   const label = t.pageLabels[pageId]
@@ -613,6 +614,13 @@ function ContentPage({ pageId, projects, certificates, onBack, t }) {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         {certificates.map((item, i) => (
           <CertCard key={i} item={item} i={i} isDark={isDark} onDetails={setDetailIndex} />
+        ))}
+      </div>
+    ),
+    resume: (
+      <div className="grid grid-cols-1 max-w-xl">
+        {resume.map((item, i) => (
+          <ProjectCard key={i} item={item} i={i} isDark={isDark} onDetails={setDetailIndex} />
         ))}
       </div>
     ),
@@ -698,6 +706,15 @@ function ContentPage({ pageId, projects, certificates, onBack, t }) {
             isDark={isDark}
           />
         )}
+        {detailIndex !== null && pageId === 'resume' && (
+          <ProjectDetailModal
+            key={`resume-${detailIndex}`}
+            item={resume[detailIndex]}
+            i={detailIndex}
+            onClose={() => setDetailIndex(null)}
+            isDark={isDark}
+          />
+        )}
       </AnimatePresence>
     </>
   )
@@ -715,7 +732,7 @@ function PaperLabel({ text, color }) {
   )
 }
 
-export default function FolderSection({ projects, certificates, t }) {
+export default function FolderSection({ projects, certificates, resume, t }) {
   const { isDark } = useTheme()
   const [folderOpen, setFolderOpen] = useState(false)
   const [activePage, setActivePage] = useState(null)
@@ -723,6 +740,7 @@ export default function FolderSection({ projects, certificates, t }) {
   const pageMeta = [
     { id: 'projects',     label: t.pageLabels.projects,     accent: PAGE_ACCENTS.projects },
     { id: 'certificates', label: t.pageLabels.certificates, accent: PAGE_ACCENTS.certificates },
+    { id: 'resume',       label: t.pageLabels.resume,       accent: PAGE_ACCENTS.resume },
   ]
 
   return (
@@ -773,6 +791,7 @@ export default function FolderSection({ projects, certificates, t }) {
                 pageId={activePage}
                 projects={projects}
                 certificates={certificates}
+                resume={resume}
                 onBack={() => {
                   setActivePage(null)
                   setFolderOpen(true)
@@ -801,7 +820,8 @@ export default function FolderSection({ projects, certificates, t }) {
                     }}
                     items={[
                       <PaperLabel text={t.pageLabels.projects} color={isDark ? "#1A3A99" : "#3b1fa8"} />,
-                      <PaperLabel text="Awards" color={isDark ? "#152E80" : "#2e1880"} />,
+                      <PaperLabel text={t.pageLabels.certificates} color={isDark ? "#152E80" : "#2e1880"} />,
+                      <PaperLabel text={t.pageLabels.resume} color={isDark ? "#7C4A03" : "#92400E"} />,
                     ]}
                   />
                 </div>
