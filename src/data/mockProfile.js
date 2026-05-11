@@ -78,7 +78,7 @@ export const profile = {
       tags: ['UX Design', 'Figma', 'User Research', 'Prototyping'],
       year: 'Mar 2026 – Present',
       photo: '/projects/quickbook.png',
-      link: 'https://docs.google.com/presentation/d/1Phi3XcF8OS0s5JSBA9Smf5f6djcKG2bQ/edit?usp=sharing',
+      link: 'https://drive.google.com/file/d/1DHCB7KD2nAJeSpktuj1wrMZgp9YGkFut/view?usp=sharing',
       gradient: 'from-blue-500 via-blue-400 to-cyan-400',
       icon: '📱',
       detail: {
